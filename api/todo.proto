@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package pb;
+
+service TodoService {
+    rpc Create(CreateTodoRequest) returns (CreateTodoResponse) {}
+    rpc List(ListTodoRequest) returns (ListTodoResponse) {}
+}
+
+message CreateTodoRequest {
+    string name = 1;
+    string desc = 2;
+    bool status = 3;
+}
+
+message CreateTodoResponse {
+    string tid = 1;
+}
+
+message ListTodoRequest {
+    string tid = 1;
+}
+
+message ListTodoResponse {
+    string name = 1;
+    string desc = 2;
+    bool status = 3;
+}
